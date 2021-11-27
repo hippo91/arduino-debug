@@ -1,5 +1,5 @@
 # I target a recent cmake, it shouldn't be a problem on a dev machine
-cmake_minimum_required( VERSION 3.11 )
+cmake_minimum_required( VERSION 3.7 )
 # Largely inspired from https://www.kuon.ch/post/2018-07-11-avr-cmake/
 # Project name
 project( "Atmega128p serial debugging" )
