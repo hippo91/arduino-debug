@@ -3,6 +3,8 @@
 
 #define REGISTER_SIZE 8
 
+#include <avr/io.h>
+
 /**
  * @brief Compute the value of the USART Baud Rate Register
  * 
