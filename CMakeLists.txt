@@ -1,3 +1,4 @@
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/arduino-avr-toolchain.cmake)
 # I target a recent cmake, it shouldn't be a problem on a dev machine
 cmake_minimum_required( VERSION 3.10 )
 # Largely inspired from https://www.kuon.ch/post/2018-07-11-avr-cmake/
@@ -5,6 +6,7 @@ cmake_minimum_required( VERSION 3.10 )
 project("Atmega328p serial debugging")
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 ## AVR Chip Configuration
 set(F_CPU 16000000UL)
