@@ -33,21 +33,16 @@ void USART0SendData(const unsigned char* data)
   USART0SendByte('\r');
 }
 
-void DumpRegister(const uint8_t reg, uint8_t* buffer)
-{
-  for (uint8_t index=0; index < REGISTER_SIZE; ++index) {
-    if (reg & (1<<index)) {
-      buffer[REGISTER_SIZE-1-index] = '1';
-    } else {
-      buffer[REGISTER_SIZE-1-index] = '0';
-    }
-  }
-  buffer[REGISTER_SIZE] = 0;
-}
-
 void USART0DumpRegister(const uint8_t reg)
 {
   uint8_t reg_brep[REGISTER_SIZE+1]; // +1 For null terminated string
-  DumpRegister(reg, reg_brep);
+  for (uint8_t index=0; index < REGISTER_SIZE; ++index) {
+    if (reg & (1<<index)) {
+      reg_brep[REGISTER_SIZE-1-index] = '1';
+    } else {
+      reg_brep[REGISTER_SIZE-1-index] = '0';
+    }
+  }
+  reg_brep[REGISTER_SIZE] = 0;
   USART0SendData(reg_brep);
 }

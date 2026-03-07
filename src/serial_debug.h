@@ -48,16 +48,6 @@ void USART0SendData(const unsigned char* data);
 
 /*--------------------------------------------------------*/
 /**
- * @brief Dumps the binary representation of the register into buffer
- * 
- * @param reg : register to be represented as a binary string
- * @param buffer : string that will hold the binary representation
- */
-/*--------------------------------------------------------*/
-void DumpRegister(const uint8_t reg, uint8_t* buffer);
-
-/*--------------------------------------------------------*/
-/**
  * @brief Send the binary representation of the register
  *        through serial output
  * 
