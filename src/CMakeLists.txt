@@ -32,8 +32,9 @@ write_basic_package_version_file(
 )
 
 install(FILES
-          "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfig.cmake"
-          "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfigVersion.cmake"
+        "${CMAKE_SOURCE_DIR}/cmake/arduino-avr-toolchain.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfigVersion.cmake"
         DESTINATION ${qualified_install_cmakedir}
 )
 
