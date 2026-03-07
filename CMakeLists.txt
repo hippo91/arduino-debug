@@ -3,7 +3,7 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/arduino-avr-toolchain.cmake)
 cmake_minimum_required( VERSION 3.10 )
 # Largely inspired from https://www.kuon.ch/post/2018-07-11-avr-cmake/
 # Project name
-project("Atmega328p serial debugging")
+project("Atmega328p serial debugging" VERSION 1.0.0)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
