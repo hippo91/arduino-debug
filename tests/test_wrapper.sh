@@ -31,3 +31,6 @@ QEMU_PID="$!"
 sleep 1
 kill "${QEMU_PID}"
 
+# Return in error. Test success or failure
+# will be handled by CMAKE PASS_REGULAR_EXPRESSION
+exit 255
