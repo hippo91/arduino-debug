@@ -1,3 +1,9 @@
+# make cache variables for install destinations
+include(GNUInstallDirs)
+set(qualified_install_libdir ${CMAKE_INSTALL_LIBDIR}/ArduinoDebug)
+set(qualified_install_cmakedir ${CMAKE_INSTALL_LIBDIR}/ArduinoDebug/cmake)
+set(qualified_install_incdir ${CMAKE_INSTALL_INCLUDEDIR}/ArduinoDebug)
+
 add_library(SerialDebug STATIC)
 
 target_sources(SerialDebug
@@ -8,16 +14,10 @@ target_sources(SerialDebug
 target_include_directories(SerialDebug
                            PUBLIC
                            "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-                           "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+                           "$<INSTALL_INTERFACE:${qualified_install_incdir}>"
 )
 
-# make cache variables for install destinations
-include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
-
-set(qualified_install_libdir ${CMAKE_INSTALL_LIBDIR}/ArduinoDebug)
-set(qualified_install_cmakedir ${CMAKE_INSTALL_LIBDIR}/ArduinoDebug/cmake)
-set(qualified_install_incdir ${CMAKE_INSTALL_INCLUDEDIR}/ArduinoDebug)
 
 configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/ArduinoDebugConfig.cmake.in
   "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfig.cmake"
