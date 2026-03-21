@@ -1,4 +1,5 @@
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/arduino-avr-toolchain.cmake)
+find_package(AvrToolchain REQUIRED)
+set(CMAKE_TOOLCHAIN_FILE ${AvrToolchain_LOCATION})
 # I target a recent cmake, it shouldn't be a problem on a dev machine
 cmake_minimum_required( VERSION 3.10 )
 # Largely inspired from https://www.kuon.ch/post/2018-07-11-avr-cmake/
