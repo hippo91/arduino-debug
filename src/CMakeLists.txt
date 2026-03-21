@@ -27,7 +27,7 @@ configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/ArduinoDebugConfig.cma
 # generate the version file for the config file
 write_basic_package_version_file(
   "${CMAKE_CURRENT_BINARY_DIR}/ArduinoDebugConfigVersion.cmake"
-  VERSION "${version}"
+  VERSION "${CMAKE_PROJECT_VERSION}"
   COMPATIBILITY AnyNewerVersion
 )
 
