@@ -1,5 +1,7 @@
 find_package(AvrToolchain REQUIRED)
-set(CMAKE_TOOLCHAIN_FILE ${AvrToolchain_LOCATION})
+avr_init()
+avr_select_board(ArduinoUno)
+
 # I target a recent cmake, it shouldn't be a problem on a dev machine
 cmake_minimum_required( VERSION 3.10 )
 # Largely inspired from https://www.kuon.ch/post/2018-07-11-avr-cmake/
@@ -8,11 +10,6 @@ project("Atmega328p serial debugging" VERSION 1.0.0)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-## AVR Chip Configuration
-set(F_CPU 16000000UL)
-set(PROC_ID __AVR_ATmega328P__ CACHE STRING "MCU include guard")
-set(MCU atmega328p CACHE STRING "Processor")
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
