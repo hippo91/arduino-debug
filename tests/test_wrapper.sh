@@ -26,10 +26,11 @@ if [ ! -f "$TEST_EXE" ]; then
   usage
 fi
 
-qemu-system-avr -machine uno -bios "${TEST_EXE}" -serial stdio -display none &
-QEMU_PID="$!"
+# TODO : find simavr through CMake Find module
+simavr -f 16000000 -m atmega328p "${TEST_EXE}" &
+SIMAVR_PID="$!"
 sleep 1
-kill "${QEMU_PID}"
+kill "${SIMAVR_PID}"
 
 # Return in error. Test success or failure
 # will be handled by CMAKE PASS_REGULAR_EXPRESSION
