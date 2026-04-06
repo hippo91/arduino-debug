@@ -14,22 +14,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# Pass defines to compiler
-add_definitions(
-  -DF_CPU=${F_CPU}
-  -D${PROC_ID}
-)
-
-# mmcu MUST be passed to both the compiler and linker, this handle the
-# linker
-set(CMAKE_EXE_LINKER_FLAGS -mmcu=${MCU})
-
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_compile_options(
-  -mmcu=${MCU} # MCU
   -Os # optimize
   -Wall # enable warnings
   -Wno-main
